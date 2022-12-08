@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script>
+        var delayInMilliseconds = 500;
+
+$(document).ready(function() {
+    $(".header-button").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#main").offset().top + (0)
+        }, 750);
+    });
+});
+
+// Navbar Icon
+// ===========
+
+// Didn 't include menu thingie, because i didn't finish the css or html for it, so for now i just left the javascript code for it in here so you could see the animation for the button.
+
+$('#nav-icon3').click(function(){
+
+    if($("#nav-icon3").hasClass('open')) {
+        $('#nav-icon3').toggleClass('open');
+        var $selector2 = $('#menu');
+          $selector2
+            .data('oHeight',$selector2.height())
+            .css('height','0')
+            .data('nHeight',$selector2.height())
+            .height($selector2.data('oHeight'))
+            .animate({height: $selector2.data('nHeight')},300);
+          setTimeout(function() {
+            $('#menu').css("display", "none");
+          }, delayInMilliseconds);
+    } else {
+        $('#nav-icon3').toggleClass('open');
+        var $selector = $('#menu');
+          $selector
+            .data('oHeight',$selector.height())
+            .css('height','auto')
+            .data('nHeight',$selector.height())
+            .height($selector.data('oHeight'))
+            .animate({height: $selector.data('nHeight')},300);
+        $('#menu').css("display", "grid");
+    }
+
+});
+
+
+
+// Verified
+// ========
+
+$(".username-dev, .uname-verified").on({
+    mouseenter: function () {
+        $(".verified").css("opacity", "1");
+        $(".verified").css("top", "130%");
+    },
+    mouseleave: function () {
+        $(".verified").css("opacity", "0");
+        $(".verified").css("top", "150%");
+    }
+});
+
+;(function($) {
+    $window = $(window);
+
+    $('*[data-type="parallax"]').each(function(){
+
+        var $bgobj = $(this);
+
+        $(window).scroll(function() {
+
+            var yPos = -($window.scrollTop() / $bgobj.data('speed'));
+            var coords = '50% '+ yPos + 'px';
+
+            $bgobj.css({ backgroundPosition: coords });
+
+        });
+    });
+})(jQuery);
+
+
+
+
+    </script>
+
+</head>
+<body>
+    <!--
+Hey, this is a project i'm working on together with some other people.
+This design is made 100% by me, and the logo is made by me aswell. All the images are taken from unsplash.com <3
+---
+you can check out my friend Artx999 that is the owner of the project i'm working on here: https://codepen.io/Artx999
+---
+As i've said, this is a project we're working on outside of codepen, hence the logo, brand name, and all the links in the footer. Also why the font isn't working for the logo etc. This is just to share some design stuff, and let u guys have some free code and inspiration if that's what u want!
+Enjoy <3
+-->
+<nav id="navbar">
+    <div class="nav-right">
+        <ul id="navbar-items">
+            <li class="navbar-item no-mob"><a class="navbar-item-inner" href="#"><span><i class='uil uil-home-alt'></i> Home</span></a></li>
+            <li class="navbar-item no-mob"><a class="navbar-item-inner" href="#"><span><i class='uil uil-comment-image'></i> resumegen</span></a></li>
+            <li class="navbar-item no-mob"><a class="navbar-item-inner" href="#"><span><i class='uil uil-server-alt'></i> ZIp FILE</span></a></li>
+            <li class="navbar-item"><a class="navbar-item-inner" href="#"><span><i class='uil uil-user'></i></span></a></li>
+        </ul>
+    </div>
+</nav>
+               
+                <div class="post-container">
+                
+                  <br><br>  <h2 class="post-sec-title">Parv Ghai</h2>
+                    <p class="post-sec-text">A BCA student. 1st year trying to create a website as a prototype. </p>
+                   
+                        <div class="post-b-right">
+                            <a href="#">Read More...</a>
+                        </div>
+                   
+                </div>
+           
+    <br>
+    
+           
+
+<footer id="footer">
+    
+    <div class="footer-inner">
+        <div class="footer-left">
+            
+            <a class="footer-mail">Find us everywhere.</a>
+        </div>
+        <div class="footer-right">
+            <div class="footer-links">
+                <a class="footer-link fl-first" href="#" target="_blank">URN</a>
+                <a class="footer-link" href="#" target="_blank"></a>
+                <a class="footer-link" href="#" target="_blank">Instagram.</a>
+                <a class="footer-link fl-last" href="#errorpage" target="_blank">Donation</a>
+            </div>
+            <div class="footer-text">
+                <p>parvcop.&copy2020. All rights reserved.</p>
+                <p>Made by Areal Alien (i took inspiration from him)</p>
+            </div>
+            <div class="footer-sites">
+     | <a href="https://codepen.io/areal_alien/pen/vYNejKG" >inspired from</a>  
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
